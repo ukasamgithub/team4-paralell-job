@@ -42,7 +42,6 @@ pipeline{
             }
             steps{
                 echo "we are done "
-                echo "Thank you"
             }
         }
     }
