@@ -1,6 +1,6 @@
 pipeline{
     agent{
-        label 'slave1'
+        label 'slave 1'
     } 
     stages{
         stage('1-clone'){
@@ -12,7 +12,7 @@ pipeline{
             parallel{
                 stage('1-subjob1'){
                     agent {
-                        label 'slave2'
+                        label 'slave 2'
                     }
                     steps{
                         sh 'lscpu'
@@ -30,7 +30,7 @@ pipeline{
         }
         stage('3-codetest'){
             agent {
-                label 'slave1'
+                label 'slave 1'
             }
             steps{
                 sh 'free -m'
@@ -38,7 +38,7 @@ pipeline{
         }
         stage('4-clossing'){
             agent{
-                label 'slave2'
+                label 'slave 2'
             }
             steps{
                 echo "we are done "
